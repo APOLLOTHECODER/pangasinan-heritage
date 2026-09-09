@@ -1,0 +1,170 @@
+export interface IslandItem {
+  id: string;
+  name: string;
+  category: 'Adventure' | 'Beaches' | 'Scenic & Faith' | 'Wildlife & Nature';
+  emoji: string;
+  tagline: string;
+  description: string;
+  activities: string[];
+  highlights: string[];
+  bestFor: string;
+  tip: string;
+}
+
+export const islandCategories = [
+  'All',
+  'Adventure',
+  'Beaches',
+  'Scenic & Faith',
+  'Wildlife & Nature',
+] as const;
+
+export type IslandCategory = typeof islandCategories[number];
+
+export const hundredIslandsList: IslandItem[] = [
+  {
+    id: 'governors-island',
+    name: "Governor's Island",
+    category: 'Scenic & Faith',
+    emoji: '🌄',
+    tagline: 'Highest peak with a 360-degree view deck and cross-island zipline',
+    description: "One of the most famous and developed islands in the park. Climb the concrete stairs to the summit view deck for an iconic 360-degree panoramic vista across the entire archipelago. Home to the historic Pinoy Big Brother (PBB) house.",
+    activities: ['Summit View Deck Climbing', '546-meter Cross-Island Zipline', 'Sightseeing & Photography', 'PBB Celebrity House Visit'],
+    highlights: ['Breathtaking 360° archipelago viewpoint', 'Longest island-to-island zipline to Virgin Island', 'VIP guest villas'],
+    bestFor: 'First-time visitors, panoramic photography, adventure seekers',
+    tip: 'Climb the stairs in the early morning to catch the calm sea reflections and beat the midday heat.',
+  },
+  {
+    id: 'quezon-island',
+    name: 'Quezon Island',
+    category: 'Beaches',
+    emoji: '🏖️',
+    tagline: 'The vibrant main hub for dining, swimming, and giant clam snorkeling',
+    description: "The primary tourist recreation hub of the park, featuring spacious dining pavilions, kayak rentals, and a powdery sand beach. Just offshore lies the Giant Clam Sanctuary, where colorful giant clams (Tridacna gigas) thrive in clear water.",
+    activities: ['Swimming & Snorkeling', 'Giant Clam Viewing', 'Kayaking & Banana Boat', 'Picnics & Pavilion Dining'],
+    highlights: ['Underwater Giant Clam Coral Garden', 'Twin multi-level dining pavilions', '120-meter zipline to small islet'],
+    bestFor: 'Lunch picnics, family groups, watersports, snorkeling',
+    tip: 'Rent snorkeling gear before boarding your boat at Lucap Wharf so you can explore the clams freely.',
+  },
+  {
+    id: 'marcos-island',
+    name: 'Marcos Island',
+    category: 'Adventure',
+    emoji: '🤿',
+    tagline: 'Home of Imelda Cave and the thrilling 12-foot cliff plunge',
+    description: "A haven for adrenaline lovers. Marcos Island hides Imelda Cave, a cathedral-like cavern filled with luminous emerald waters that open out to the open sea. Adventurers can jump from a 12-foot wooden platform directly into the refreshing cave pool.",
+    activities: ['Imelda Cave 12-foot Cliff Plunge', 'Cave Swimming', 'White Sand Beach Strolling', 'Marine Life Exploration'],
+    highlights: ['Sunlight streaming through cave ceiling', 'Emerald tidal pool connected to the sea', 'Pristine beach cove'],
+    bestFor: 'Cliff jumpers, cave explorers, thrill seekers',
+    tip: 'Life vests are required for the cave jump. Listen closely to the local guide regarding tide levels.',
+  },
+  {
+    id: 'virgin-island',
+    name: 'Virgin Island',
+    category: 'Beaches',
+    emoji: '🏝️',
+    tagline: 'Connected by floating pontoon bridge with serene coves and mermaid statue',
+    description: "A postcard-perfect destination connected to Governor's Island by a floating pontoon footbridge and zipline landing. It boasts tranquil turquoise coves, dramatic rock formations, a sunbathing beach, and a popular statue of a mermaid overlooking the reef.",
+    activities: ['Floating Pontoon Bridge Walk', 'Sunbathing & Beachcombing', 'Zipline Landing View', 'Mermaid Monument Photo Ops'],
+    highlights: ['Picturesque pontoon floating bridge', 'Serene uncrowded swimming coves', 'Shaded relaxation gazebos'],
+    bestFor: 'Couples, peaceful swimming, relaxing beach walks',
+    tip: 'Walking across the floating pontoon bridge between islands is a fun, gentle balancing experience.',
+  },
+  {
+    id: 'pilgrimage-island',
+    name: 'Pilgrimage Island',
+    category: 'Scenic & Faith',
+    emoji: '⛪',
+    tagline: 'Spiritual haven with 56-foot Christ the Savior statue and 263-step stairway',
+    description: "Formerly Martha Island, Pilgrimage Island has become a peaceful spiritual destination. Visitors ascend 263 steps featuring life-sized Stations of the Cross sculptures to reach the 56-foot statue of Christ the Savior blessing the surrounding sea.",
+    activities: ['263-Step Faith Stairway Climb', 'Statue of Christ the Savior Visit', 'Stations of the Cross Meditation', 'Highland Panoramic Photography'],
+    highlights: ['Colossal 56-foot Christ statue overlooking the gulf', '14 Stations of the Cross vignettes', 'Quiet reflective atmosphere'],
+    bestFor: 'Pilgrims, spiritual reflection, sweeping sea vistas',
+    tip: 'Wear comfortable walking shoes and bring water for the staircase ascent under the sun.',
+  },
+  {
+    id: 'childrens-island',
+    name: 'Children\'s Island',
+    category: 'Beaches',
+    emoji: '👶',
+    tagline: 'Gentle calm waters and soft sandbanks safe for toddlers and families',
+    description: "Designed naturally for families with young children, this island features shallow, wave-sheltered crystal clear waters and a gently sloping seabed. Shaded picnic tables and calm tides make it the safest beach in the park for all ages.",
+    activities: ['Shallow Water Wading', 'Family Beach Picnics', 'Sandcastle Building', 'Gentle Snorkeling'],
+    highlights: ['Protected zero-wave natural lagoon', 'Shallow waters extending dozens of meters', 'Clean picnic tables and restrooms'],
+    bestFor: 'Families with young kids, toddlers, elders wanting a relaxed dip',
+    tip: 'An ideal spot to unroll your picnic blanket and enjoy lunch in the cool ocean breeze.',
+  },
+  {
+    id: 'cuenco-island',
+    name: 'Cuenco Island',
+    category: 'Adventure',
+    emoji: '🕳️',
+    tagline: 'Walk-through sea cave tunnel leading to a secluded secret beach',
+    description: "Famous for Cuenco Cave, a natural cavern tunnel traversing right through the limestone cliff. Visitors walk through the cool stalactite-decorated cave path and emerge onto a secluded rocky beach on the opposite side of the island.",
+    activities: ['Spelunking & Cave Traversal', 'Stalactite & Stalagmite Viewing', 'Secret Beach Exploring', 'Rock Climbing'],
+    highlights: ['Natural tunnel connecting opposite sides of the island', 'Fascinating limestone formations', 'Cool interior cave microclimate'],
+    bestFor: 'Cave explorers, geology enthusiasts, photographers',
+    tip: 'Bring a waterproof flashlight or phone light to inspect the ancient limestone textures inside.',
+  },
+  {
+    id: 'cathedral-island',
+    name: 'Cathedral Island',
+    category: 'Adventure',
+    emoji: '🏛️',
+    tagline: 'Massive dome-shaped sea cavern carved by ocean waves over millennia',
+    description: "Named after its towering, cathedral-like cave entrance carved into high limestone cliffs. Boats can slowly cruise right up to the cavern opening where sunlight reflects through the ceiling onto deep blue crystal waters.",
+    activities: ['Sea-Cave Boat Cruising', 'Kayaking into the Cavern', 'Acoustic Echo Experiments', 'Rock Formation Photography'],
+    highlights: ['Soaring cathedral-vaulted natural stone ceiling', 'Emerald reflection on the cave ceiling', 'Dramatic karst cliffs'],
+    bestFor: 'Kayakers, landscape photographers, boat sightseers',
+    tip: 'Kayaking inside when the water is calm allows you to experience the natural echoing acoustics of the cavern.',
+  },
+  {
+    id: 'devils-island',
+    name: "Devil's Island & Coral Garden",
+    category: 'Wildlife & Nature',
+    emoji: '🐠',
+    tagline: 'Premier snorkeling sanctuary teeming with tropical fish and giant clams',
+    description: "Despite its dramatic name, this island is a marine life paradise. The surrounding reef known as the Coral Garden is home to schools of clownfish, butterflyfish, sea turtles, and thriving giant clam propagation beds cared for by marine biologists.",
+    activities: ['Coral Reef Snorkeling', 'Giant Clam Habitat Watching', 'Helmet Diving', 'Marine Life Photography'],
+    highlights: ['Vibrant healthy coral reef system', 'Diverse colorful schools of tropical fish', 'Giant clam conservation nursery'],
+    bestFor: 'Snorkelers, scuba divers, underwater photographers, marine biology lovers',
+    tip: 'Never step on the corals or touch the giant clams to protect the delicate marine sanctuary ecosystem.',
+  },
+  {
+    id: 'bat-island',
+    name: 'Bat Island',
+    category: 'Wildlife & Nature',
+    emoji: '🦇',
+    tagline: 'Protected wildlife sanctuary for thousands of fruit bats and flying foxes',
+    description: "A strictly protected wildlife reserve where thousands of giant fruit bats and Philippine flying foxes roost upside-down in the high coastal trees. At dusk, the sky comes alive as colonies take flight across the islands.",
+    activities: ['Boat-Based Wildlife Viewing', 'Bird and Bat Watching', 'Sunset Flight Photography', 'Ecological Sightseeing'],
+    highlights: ['Thousands of nocturnal fruit bats hanging from jungle canopy', 'Rare flying fox species', 'Undisturbed natural sanctuary'],
+    bestFor: 'Bird watchers, wildlife enthusiasts, eco-tourists',
+    tip: 'Boats maintain a respectful distance to avoid disturbing the bat colonies in their roosting trees.',
+  },
+  {
+    id: 'monkey-island',
+    name: 'Monkey Island',
+    category: 'Wildlife & Nature',
+    emoji: '🐒',
+    tagline: 'Limestone sanctuary inhabited by playful wild Philippine long-tailed macaques',
+    description: "A heavily forested karst island inhabited by a troop of native Philippine long-tailed macaques. Visitors observing from boats can often watch monkeys foraging along the rocky shore and swinging among wild fig branches.",
+    activities: ['Wildlife Observation from Boat', 'Nature Photography', 'Eco-Tourism Education'],
+    highlights: ['Troop of native Philippine macaques in their natural habitat', 'Lush undisturbed limestone forest'],
+    bestFor: 'Animal lovers, families, photographers',
+    tip: 'Never feed the monkeys or throw food from the boat, as human food disrupts their natural foraging diet.',
+  },
+  {
+    id: 'turtle-island',
+    name: 'Turtle & Crocodile Islands',
+    category: 'Scenic & Faith',
+    emoji: '🐢',
+    tagline: 'Uncanny natural rock sculptures shaped like giant sea creatures',
+    description: "Nature's whimsical art gallery: Turtle Island resembles a gigantic sea turtle floating peacefully in the water, complete with head and shell, while nearby Crocodile Island mirrors a resting reptile with textured rocky ridges.",
+    activities: ['Geological Wonder Sightseeing', 'Formations Photography', 'Boat Cruise Scenic Tours'],
+    highlights: ['Uncanny natural resemblance to a giant sea turtle', 'Ancient coral reef uplift geological history', 'Spectacular drone viewpoints'],
+    bestFor: 'Geology fans, drone pilots, sightseeing tour passengers',
+    tip: 'Best photographed from a moving boat slightly off the starboard side to capture the full animal silhouette.',
+  },
+];
+
